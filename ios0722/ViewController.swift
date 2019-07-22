@@ -43,6 +43,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func custom(_ sender: Any) {
+        var viewController = UIViewController()
+        viewController.view.backgroundColor = UIColor.blue
+        
+        let alert = UIAlertController(title: "제목", message: "메시지", preferredStyle: .alert)
+        //alert의 내용으로 viewController를 설정
+        alert.setValue(viewController, forKey: "contentViewController")
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(cancel)
+        
+        self.present(alert,animated: true)
     }
     
     
